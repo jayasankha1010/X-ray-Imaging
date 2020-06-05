@@ -1,0 +1,402 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+\title{X-ray Imaging Quality Assurance}					% Title
+\author{U.G.C.Jayasankha}								% Author
+\date{April 20, 2020}											% Date
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+%\chead{170259P}
+\cfoot{\thepage}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+	\centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.8]{University_of_Moratuwa_logo.png}\\[1.0 cm]	% University Logo
+    \textsc{\Large Department of Electronics and Telecommunication Engineering}\\[0.8 cm]
+    %\textsc{\Large University of Moratuwa}\\[1.0 cm]	% University Name
+	\textsc{\large BM 3121}\\[0.5 cm]				% Course Code
+	\textsc{\Large Medical Imaging}\\[0.5 cm]				% Course Name
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \bfseries \thetitle}\\
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{Name:}\\
+			\theauthor
+			\end{flushleft}
+			\end{minipage}~
+			\begin{minipage}{0.4\textwidth}
+			\begin{flushright} \large
+			\emph{Index Number:} \\
+			170259P									% Your Student Number
+		\end{flushright}
+	\end{minipage}\\[2 cm]
+	
+	{\large \thedate}\\[2 cm]
+ 
+	\vfill
+	
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction to X-ray Imaging}
+X-rays are being used to produce medical images ever since it was discovered by a German physics professor W.Rontgen in 1895. After seeing the possibility of these newly discovered rays to see inside the body, Prof.Rontgen decides to take a X-ray image of his wife's hand. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.22\linewidth]{1stXray.jpg}
+  \caption{\small{\textit{Hand mit Ringen (Hand with Rings)}: print of Wilhelm Röntgen's first "medical" X-ray, of his wife's hand, taken on 22 December 1895}}
+  \label{fig:First X-ray Image}
+\end{figure}
+
+The X-ray image is formed by the interaction of X-ray photons with a photon
+detector and is therefore a distribution of those photons, which are transmitted through
+the patient and are recorded by the detector. The image is therefore a projection of the attenuating properties of all the tissues along the paths of the X-rays. It is a two-dimensional projection of the three-dimensional distribution of the X-ray attenuating properties of tissue.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.45\linewidth]{xray2.jpg}
+  \caption{\small{The components of the X-ray imaging system and the formation of the radiographic image}}
+  \label{fig:The components of the X-ray imaging system and the formation of the radiographic image}
+\end{figure}
+
+
+\pagebreak
+\section{Medical applications of X-ray Imaging}
+\subsection{Projectional radiography}
+Using the x-radiation to get a 2d projection of the part of the body. This is the most used application of X rays. As examples Chest X-ray images, Angiographs, Dental radiographs, radiographs of skeletal system can be given. 
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{chest.jpg}
+    \caption{Chest}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \centering
+    \includegraphics[width=0.855\linewidth]{knee.jpg}
+    \caption{Right knee}
+  \end{subfigure}
+  \caption{Projectional Radiography}
+  \label{fig:Projectional Radiography}
+\end{figure}
+\subsection{Computed Tomography}
+Computed tomography is a medical imaging modality where tomographic images or slices of specific areas of the body are obtained from a large series of two-dimensional X-ray images taken in different directions.These cross-sectional images can be combined into a three-dimensional image of the inside of the body and used for diagnostic and therapeutic purposes in various medical disciplines.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.170935\linewidth]{CT.jpg}
+  \caption{\small{CT of Head(transverse section)}}
+  \label{fig:CT}
+\end{figure}
+
+\subsection{Fluoroscopy}
+Fluoroscopic images are used to obtain real time moving images. Patient is placed between an X-ray source and a fluorescent screen. 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.4\linewidth]{fcopy.jpg}
+  \caption{\small{Fluoroscopic machine}}
+  \label{fig:FC}
+\end{figure}
+
+\subsection{Radiotherapy}
+High doses of X radiation is used to treat several cancers. 
+\subsection{Angiography}
+Examination of blood vessels and diagnose blood vessel problems. It is carried out after introduction of a radiopaque substance.
+\subsection{Mammography}
+Mammography is the process of using low-energy X-rays to examine the human breast for diagnosis and screening. The goal of mammography is the early detection of breast cancer.
+
+\pagebreak
+\section{Quality Assurance aspects of X-ray Imaging}
+\textbf{“Quality assurance” means the planned and systematic actions that provide adequate
+confidence that a diagnostic x-ray facility will produce consistently high quality images with
+minimum exposure of the patients and healing arts personnel. The determination of what
+constitutes high quality will be made by the facility producing the images. Quality assurance
+actions include both “quality control” techniques and “quality administration” procedures.[1]}
+
+X-ray imaging is the most widely used imaging modality in medical field. Therefore it definitely affects the health of lot of people. Many patients are exposed to X-rays while imaging. Being exposed to radiation is harmful thus, these imaging machines should be maintained in high quality. Otherwise patients and operators can be in danger. The next important thing is that  X-ray imaging should be maintained in very high precision since it is used to diagnose critical illnesses such as cancers. Thus the quality and the precision of the images are needed to be assured
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.1\linewidth]{xmodel.png}
+  \caption{\small{X-ray Imaging system}}
+  \label{fig:Imaging system}
+\end{figure}
+
+Generally an X-ray imaging system is comprised with an X-ray generator, a detector and a image development system. For the overall quality of the X-ray imaging depends on the independent quality assured on these three separate sections. A Malfunction or fault in the radiation generator will harm the subject and all other passive subjects while giving false results. A malfunction or fault in the detector or image development system will form a false image. Thus quality assurance of all these phases should be considered. 
+
+To assess the quality of X-ray systems under these aspects several parameters have been defined by the medical community internationally. In order to keep these parameters in the required range periodic tests and checkups needed to be done for the X-ray imaging systems. It can be varying from daily to annually depending on the test. These tests and parameters which are discussed in this report are keys to quality assurance of X-ray imaging.
+\newline
+\newline
+\pagebreak
+\subsection{Key Elements of Quality assurance\tiny{[4]}}
+\begin{enumerate}
+    \item \textbf{Responsibility} - Assign the duties to the Radiation safety committee in Teaching Hospitals and Provincial General Hospitals if established.
+    Assigning quality assurance responsibilities maintaining acceptable standards of quality.Reviewing \begin{itemize}
+        \item Program effectiveness and Quality assurance
+program. 
+        \item Reports quarterly. 
+        \item Monitoring and maintenance techniques
+Standards for image quality.
+        \item Results of evaluation of effectiveness
+preparation of Quality Assurance manual
+annually.
+    \end{itemize} 
+   
+    \item \textbf{Purchase specifications} - Before purchasing should determine the desired performance specifications according to the type of imaging and number of images required for a given period of time. Should be approved by the Radiation safety committee if an established committee is available and when there is no established committee by the Quality control officer. Written final purchase specification should include performance specifications. The availability of experienced service personnel should also be taken into consideration if not available training of such personnel should be incorporated into the purchase specifications. \newline At the time of installation vendor should conduct equipment performance evaluations to ensure that the purchase regulations meet the Equipment should be formally accepted after the vendor has made any necessary corrections. SLCOR National Guidelines/ Quality Assurance in A Diagnostic Radiology Department.\newline After installation purchase specifications and records of acceptance testing should be retained through out the life of the equipment for comparison of monitoring results in order to assess continued acceptability of performance\newline
+
+    \item \textbf{Standards for image quality} - Standards for acceptable image quality should be
+established.
+These should be objective. When objective
+standards cannot be defined the opinion of the
+Radiologist should be consulted for assessment of
+image quality. Standards depend on the needs and
+the resources. Should be routinely reviewed and
+redefined at least annually. \newline
+    \item \textbf{Monitoring and maintenance} - Purpose of monitoring is to evaluate the
+performance of the machines in terms of the
+standards for the image quality.
+There are five key points for monitoring. 
+\begin{itemize}
+    \item Film processing 
+    \item Basic performance characteristics of the X-ray unit 
+    \item Cassettes and grids 
+    \item View boxes 
+    \item Dark room
+\end{itemize}
+%\newline
+    \item \textbf{Evaluation} - The results of the monitoring procedures should
+be used to evaluate performance of the X-ray
+systems to determine,
+    \begin{enumerate}
+        \item Whether corrective actions are needed to
+adjust the equipment
+        \item And to keep the image quality
+consistently with in the standards. 
+    \end{enumerate}
+    This evaluation should include,
+    \begin{itemize}
+        \item Analysis of the trends in evaluation data e.g. Reject analysis 
+        \item Use of the data on a day-to-day basis to
+determine the need for corrective measures 
+        \item Comparison of the monitoring data with
+purchase specifications and acceptance testing
+results for the equipment
+    \end{itemize}
+    %\newline
+    \item \textbf{Records} - Results of the monitoring and data should be the
+basis for evaluation.
+Any difficulties detected, corrective measures
+applied and effectiveness of these measures.
+The extent and forms of these records should be
+according to the Atomic Energy Authority.\newline
+    \item \textbf{Manual} - QA manual should be written in a format
+permitting convenient revision of as needed and
+should be made readily available to all personnel.
+
+It should include following points. 
+    \begin{enumerate}
+        \item List of individuals responsible for monitoring.
+        \item List of the parameters to be monitored and the
+frequency of monitoring.
+
+        \item Description of the standards, criteria of quality,
+or limits of acceptability, which have been
+established for each of the parameters
+monitored.
+        \item Brief description of the procedures used for
+monitoring each parameter.
+        \item Description of procedures to be followed when
+difficulties are detected to call these difficulties
+to the attention of those responsible for
+correcting them
+        \item List of the publications in which detailed
+instructions for monitoring and maintenance
+procedures can be found.
+        \item List of records that should be kept and sample
+forms.
+        \item Copy of each set of purchase specifications and
+the results of acceptance testing for that
+equipment
+        \item List of persons to call for answers to quality
+control questions. 
+
+        
+    \end{enumerate}
+\newline
+\end{enumerate}
+
+\pagebreak
+
+\section{Quality assurance methods of X-ray Imaging system}
+Before going into quality assurance methods of each sub systems, consider the the whole system. There exists several quality assurance methods.
+
+\subsection{System Constancy test}
+
+This method is used to verify whether the overall performance of the system is kept constant. This test is carried out once a month. It is a simple test done using aluminium step wedge(Step attenuator block). 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\linewidth]{att.jpg}
+  \caption{\small{Aluminium step attenuation block}}
+  \label{fig:Aluminium step attenuation block}
+\end{figure}
+
+X-ray image of this block is taken and it is compared with a reference image provided with the machine.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\linewidth]{attref.jpg}
+  \caption{\small{X-ray image of step block}}
+  \label{fig:X-ray image of step block}
+\end{figure}
+
+And if the colour intensities are different more than a one step of colour, the machine has failed the consistancy test. And need to be repaired. 
+
+\subsection{Radio-graphic System Visual Checklist}
+
+This is test is only a visual inspection to check whether all the necessary parts of the whole system is available. Checklist is as follows, 
+
+\begin{enumerate}
+    \item Brightness and cleanliness of Collimator light
+    \item Collimator filters in place
+    \item Check to make sure all locks on tube and table are functioning properly
+    \item Ensure smooth motion of the tube and the table
+    \item Grid condition and operation should not have any damage
+    \item Condition of cables
+    \item Oil leakage around the X-Ray tube or generator
+    \item Cassettes and screens condition
+    \item Loaded cassettes are properly shielded from radiation to prevent exposure in storage
+    \item Whether the control panel indicators are working
+    \item Make sure technique charts (Voltage, Current and Time) are available, current, and appropriate for all procedures normally performed
+    \item Ability to view the patient through a window from outside is not obstructed
+    \item Exposure switch should be placed in a place accessible only to the radiographer
+    \item Lead aprons, gloves, collars, etc. are readily available
+
+\end{enumerate}
+This test is carried out once in three months to assure the quality.
+
+\subsection{Repeat Analysis of X-ray Imaging system}
+Due to various drawbacks of the systems some images are needed to be retaken. Those situations are recorded for further analysis by the operator. These records can be used to trace back or track the fault in the machine or fault of the humans. 
+
+Overall repeat rate is a parameter defined as follows to do the analysis. 
+\begin{equation}
+    \centering
+    ORR = \frac{Total\hspace{0.1 cm}number\hspace{0.1 cm} of\hspace{0.1 cm} repeated\hspace{0.1 cm} images}{Total\hspace{0.1 cm} number\hspace{0.1 cm} of\hspace{0.1 cm} images\hspace{0.1 cm} taken}
+\end{equation}
+
+After analysing the records following faults can be recognized. 
+
+\begin{enumerate}
+    \item Light Films / Dark Films /Black Films
+    \item Positioning errors
+    \item Incorrect Patient ID usage
+    \item Patient movements during exposure
+    \item Double Exposure
+    \item Static noise/Fog
+\end{enumerate}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{repeat.jpg}
+  \caption{\small{Repeat log records}}
+  \label{fig:Repeat log records}
+\end{figure}
+
+\subsection{Room Comparability Testing}
+In some medical facilities there may be more than one room for X-ray imaging and several X-ray sources and detectors might be interchangeably used. Slight variations in the X-ray system and the environment in general can cause slight changes in the recorded X-ray. Therefore two X-ray images obtained of the same patient in these two rooms can be slightly different to each other in terms of intensity. The degree of comparability of such two images can be evaluated by imaging the same test object (Ladder step) with identical conditions in each of the rooms and visually comparing with each other.[2]
+
+\subsection{Artifact Evaluation}
+
+X-ray artifacts can present in a variety of ways including abnormal shadows noted on a radiograph or degraded image quality, and have been produced by artificial means from hardware failure, operator error and software (post-processing) artifacts.[3]
+
+\subsection{Image quality analysis}
+
+Image quality can be determined by an X ray image by analyzing. Ultimate outcome of the system is the image. Therefore existence of any fault of the system can be identified by analyzing a image of an standard object.
+Analyzing criteria is as follows,
+Object is a thoracic region of healthy person who is in deep breath.
+\begin{enumerate}
+    \item Medial border of the scapulae is projected outside the lung fields
+    \item The processes of the spine and the
+dorsal vertebrae are equidistant from the inner borders of the clavicles (no thorax rotation)
+    \item Reproduction of the whole thoracic cavity
+    \item Peripheral vessels are visualized sharply (While respiration is suspended)
+    \item Diaphragm is // sharply
+    \item Lung vessels are seen clearly though the silhouette of the heart
+    \item Lung vessels are seen clearly though the silhouette of the heart
+    \item Overall quality of the image is acceptable for clinical purpose
+\end{enumerate}
+\pagebreak
+
+\section{Recent advancements in X-ray Imaging Quality Assurance }
+Since X-ray imaging is widely used around the globe, lot of Research and Development for X-ray imaging is happening. Therefore devices get upgraded and quality assurance methods has to be updated with those changes. \newline 
+
+Conventional X-ray imaging machines which used films for get the image are being replaced by Digital X-ray imaging machine now. They are much more hassle free when comparing with the old machines. But the operators has to learn all new quality assurance methods. Even after that Computed radiography has come into the practice and it is much more scientifically accurate.  \newline
+
+One of the main concern of the researches is to reduce the radiation exposure for people. Automation and semi-automation of the imaging machines help to reduce time period required for the imaging and it helps to reduce the radiation exposure. 
+
+Rejection/repeat analysis described in topic 4.3 is an powerful method to quality assurance and with the improvement of technology researches have developed machine learning models to predict the defect or fault using rejected images. And many more parameters have been developed using data science to predict and identify faults in systems.
+
+X-Ray phantoms with many parameter measurements and quality evaluations included are available. This reduces the time and effort of the quality assurance personnel while increasing the accuracy of the test performed.[5]
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.46\linewidth]{phantom.png}
+  \caption{\small{A modern X-Ray phantom for multiple parameter evaluation[5]}}
+  \label{fig:A modern X-Ray phantom for multiple parameter evaluation [7]}
+\end{figure}
+
+\pagebreak
+
+\section{Reference}
+\begin{enumerate}
+    \item https://research.columbia.edu/sites/default/files/content/EHS/Policies/QA.PDF
+    \item "Simple Quality Control Testing," [Online]. Available: www.wikiradiography.net. [Accessed 20 04 2020].
+    \item https://radiopaedia.org/articles/x-ray-artifacts
+    \item http://www.slcog.lk/img/guidelines/Other%20national%20Gidelines/Radiologists/Book%202/Quality%20Assurance%20in%20a%20Diagnostic%20Radiology%20Department.pdf
+    \item M. Siedband , "Basic Quality Control in Diagnostic Radiology," American Association of Physicists in Medicine, 1977.
+    \item M. A. P. Paul Chaloner, "Diagnostic X-Ray Imaging Quality Assurance: An Overview".
+    \item M. Siedband , "Basic Quality Control in Diagnostic Radiology," American Association of Physicists in Medicine, 1977.
+    \item https://www.slideserve.com/dora-aguilar/chapter-31-quality-control
+\end{enumerate}
+\pagebreak
+\textbf{\Large{Appendix}}
+\begin{appendix}
+  \listoffigures
+  %\listoftables
+\end{appendix}
+
+\end{document}
+
